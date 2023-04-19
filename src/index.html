@@ -1,0 +1,136 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenSQ Tailwind Test</title>
+  <!-- <link href="/tailwind.config" rel="stylesheet"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body x-data="{
+  currentBg: 'bg-black'
+}">
+
+  <main x-data :class="currentBg" class="transition-colors duration-500">
+
+    <!-- Hero -->
+
+    <section class="min-h-screen hero-bg text-white flex items-center justify-center overflow-hidden relative"
+      x-intersect.half="currentBg = `bg-black`">
+      <h1 class="text-4xl font-sans font-bold">
+        10SQ Tailwind Test
+      </h1>
+    </section>
+
+    <!-- Grid -->
+
+    <section x-intersect.half="currentBg = `bg-red-500`" class="p-8 grid lg:grid-cols-2 gap-8">
+      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">1</p></div>
+      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">2</p></div>
+      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">3</p></div>
+      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">4</p></div>
+    </section>
+
+    <section class="h-full flex items-center justify-center font-mono p-2 sm:p-0" x-intersect.half="currentBg = `bg-white`">
+
+      <div class="bg-[url('./static/image.jpg')] border-2 border-black w-96 h-96 rounded-full bg-contain hover:bg-cover"></div>
+
+    </section>
+
+    <section class="bg-[url('./static/image.jpg')] bg-no-repeat bg-center h-screen flex items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-teal-500">
+      <div class="absolute w-screen h-screen bg-white bg-opacity-75"></div>
+
+      <div class="w-64 h-64 border-solid border-8 border-teal-100 overflow-hidden bg-white rounded-full flex justify-center items-center z-50 group">
+        <div class="w-full h-full bg-pink-400 text-white text-xl w-24 h-24 grid lg:grid-cols-3 gap-3 group-hover:rotate-90">
+          <div class="font-sans text-xs flex justify-center items-center bg-pink-300 group-hover:invisible">01</div>
+          <div class="font-sans text-lg flex justify-center items-center bg-pink-500 group-hover:shadow-md"><span class="group-hover:-rotate-90">02</span></div>
+          <div class="font-sans text-xs flex justify-center items-center bg-pink-300 group-hover:invisible">03</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="h-screen flex items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-gray-100`">
+
+      <div class="bg-white w-3/4 mx-8 p-4 border-2 border-black rounded-lg shadow-lg flex flex-col md:grid lg:grid-cols-2 gap-2 sm:gap-8 sm:w-2/3 h-96">
+        <div class="bg-[url('./static/image.jpg')] bg-no-repeat bg-center overflow-hidden bg-auto rounded-lg h-48 md:w-full h-full"></div>
+        <!-- <img src="./static/image.jpg" class="w-full h-full overflow-hidden bg-cover" /> -->
+        <div class="flex flex-col justify-center items-start">
+          <h3 class="font-sans text-3xl font-bold mb-2">Blog Post</h3>
+          <p class="font-sans text-xs mb-4">This is a blog post example. Lorem ipsum dolor sit <br> amet consectetur adipisicing elit. Quisquam, quod</p>
+          <ul class="flex font-sans">
+            <li class="font-sans text-xs rounded-full mr-2 text-white bg-black px-4 py-2">Tag 1</li>
+            <li class="font-sans text-xs rounded-full mr-2 text-white bg-black px-4 py-2">Tag 2</li>
+            <li class="font-sans text-xs rounded-full mr-2 text-white bg-black px-4 py-2">Tag 3</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build something cool -->
+
+    <section class="h-screen flex flex-col items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-orange-100`">
+      <h2 class="text-4xl font-bold text-center mb-8 ">
+        Build something cool
+      </h2>
+      
+      <ul id="accordion" class="bg-white w-3/4 mx-8 border-2 border-black">
+        <li class="panel">
+          <div class="panel-header p-4 border-b-2 border-gray-200 cursor-pointer">
+            <h3 class="font-sans font-sans text-3xl font-bold">Title 1</h3>
+          </div>
+          <div class="panel-drawer hidden m-4">
+            <p class="font-sans">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+          </div>
+        </li>
+        <li class="panel">
+          <div class="panel-header p-4 border-b-2 border-gray-200 cursor-pointer">
+            <h3 class="font-sans font-sans text-3xl font-bold">Title 2</h3>
+          </div>
+          <div class="panel-drawer hidden m-4">
+            <p class="font-sans">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
+          </div>
+        </li>
+        <li class="panel">
+          <div class="panel-header p-4  border-b-2 border-gray-200 cursor-pointer">
+            <h3 class="font-sans text-3xl font-bold">Title 3</h3>
+          </div>
+          <div class="panel-drawer hidden m-4">
+            <p class="font-sans">
+              Contrary to popular belief, Lorem Ipsum is not simply random text.
+              It has roots in a piece of classical Latin literature from 45 BC,
+              making it over 2000 years old.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    "use strict";
+
+    const panel = document.querySelectorAll(".panel-header");
+    const drawer = document.querySelectorAll(".panel-drawer");
+
+    for (let i = 0; i < panel.length; i++) {
+      panel[i].addEventListener("click", function () {
+        drawer[i].classList.contains("hidden")
+          ? (drawer[i].classList.remove("hidden"))
+          : (drawer[i].classList.add("hidden"));
+      });
+    }
+  </script>
+</body>
+
+</html>
+
+
+
