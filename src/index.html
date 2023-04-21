@@ -26,32 +26,41 @@
     <!-- Grid -->
 
     <section x-intersect.half="currentBg = `bg-red-500`" class="p-8 grid lg:grid-cols-2 gap-8">
-      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">1</p></div>
-      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">2</p></div>
-      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">3</p></div>
-      <div class="h-64 bg-white flex justify-center items-center hover:bg-blue-500 group"><p class="font-sans bg-red-500 text-white text-xl flex w-24 h-24 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">4</p></div>
+      <div class="h-64 bg-white border-2 border-black flex justify-center items-center hover:bg-blue-500 group">
+          <p class="font-sans bg-red-500 text-white text-base font-bold flex w-16 h-16 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">1</p>
+      </div>
+      <div class="h-64 bg-white border-2 border-black flex justify-center items-center hover:bg-blue-500 group">
+        <p class="font-sans bg-red-500 text-white text-base font-bold flex w-16 h-16 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">2</p>
+      </div>
+      <div class="h-64 bg-white border-2 border-black flex justify-center items-center hover:bg-blue-500 group">
+        <p class="font-sans bg-red-500 text-white text-base font-bold flex w-16 h-16 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">3</p>
+      </div>
+      <div class="h-64 bg-white border-2 border-black flex justify-center items-center hover:bg-blue-500 group">
+        <p class="font-sans bg-red-500 text-white text-base font-bold flex w-16 h-16 justify-center items-center rounded-full group-hover:text-black group-hover:rotate-45">4</p>
+      </div>
     </section>
+
+    <!--Image Transition-->
 
     <section class="h-full flex items-center justify-center font-mono p-2 sm:p-0" x-intersect.half="currentBg = `bg-white`">
-
-      <div class="bg-[url('./static/image.jpg')] border-2 border-black w-96 h-96 rounded-full bg-contain hover:bg-cover"></div>
-
+      <div class="border-2 border-black  relative flex items-center justify-center m-3 overflow-hidden shadow-xl w-96 h-96 rounded-full scale-100">
+        <div class="bg-[url('./static/image.jpg')] absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover hover:scale-150 ease-in duration-500"></div>
+      </div>
     </section>
 
-    <section class="bg-[url('./static/image.jpg')] bg-no-repeat bg-center h-screen flex items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-teal-500">
-      <div class="absolute w-screen h-screen bg-white bg-opacity-75"></div>
-
+    <!---->
+    <section class="bg-[url('./static/image.jpg')] bg-teal-100 bg-no-repeat shadow-inner bg-center h-screen flex items-center justify-center bg-cover" x-intersect.half="currentBg =`bg-teal-100` ">
+      <div class=" bg-no-reapat absolute w-screen h-screen bg-white bg-opacity-75 " x-intersect.half="currentBg =`bg-teal-100` "></div>
       <div class="w-64 h-64 border-solid border-8 border-teal-100 overflow-hidden bg-white rounded-full flex justify-center items-center z-50 group">
-        <div class="w-full h-full bg-pink-400 text-white text-xl w-24 h-24 grid lg:grid-cols-3 gap-3 group-hover:rotate-90">
+        <div class="w-full h-full bg-pink-400 text-white text-xl w-24 h-24 grid lg:grid-cols-3 gap-3 group-hover:rotate-90 ease-in duration-200">
           <div class="font-sans text-xs flex justify-center items-center bg-pink-300 group-hover:invisible">01</div>
-          <div class="font-sans text-lg flex justify-center items-center bg-pink-500 group-hover:shadow-md"><span class="group-hover:-rotate-90">02</span></div>
+          <div class="font-sans text-lg flex justify-center items-center bg-pink-500 group-hover:shadow-md"><span class="group-hover:-rotate-90 ">02</span></div>
           <div class="font-sans text-xs flex justify-center items-center bg-pink-300 group-hover:invisible">03</div>
         </div>
       </div>
     </section>
 
-    <section class="h-screen flex items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-gray-100`">
-
+    <section class="h-screen flex items-center justify-center font-mono bg-cover" x-intersect.half="currentBg = `bg-white`">
       <div class="bg-white w-3/4 mx-8 p-4 border-2 border-black rounded-lg shadow-lg flex flex-col md:grid lg:grid-cols-2 gap-2 sm:gap-8 sm:w-2/3 h-96">
         <div class="bg-[url('./static/image.jpg')] bg-no-repeat bg-center overflow-hidden bg-auto rounded-lg h-48 md:w-full h-full"></div>
         <!-- <img src="./static/image.jpg" class="w-full h-full overflow-hidden bg-cover" /> -->
@@ -127,6 +136,8 @@
           : (drawer[i].classList.add("hidden"));
       });
     }
+
+    
   </script>
 </body>
 
